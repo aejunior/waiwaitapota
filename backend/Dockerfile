@@ -22,6 +22,6 @@ RUN python3 -m pip install --upgrade setuptools wheel pip-tools
 
 COPY --chown=backend:backend requirements.in .
 
-RUN pip-compile --output-file=requirements.in requirements.txt && pip install -r requirements.txt
+RUN pip-compile --output-file=requirements.txt requirements.in && pip install -r requirements.txt
 
 COPY --chown=backend:backend . ./project
